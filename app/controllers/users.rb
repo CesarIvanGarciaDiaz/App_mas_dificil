@@ -16,8 +16,8 @@ get '/signup' do
 end
 
 post '/signup' do
-  user = User.new(name: params[:user]["name"], email: params[:user]["email"])
-  user.password=(params[:user]["password"])
+  user = User.new(name: params[:nombre], email: params[:email])
+  user.password=(params[:pass])
   if user.save
     session[:user_id] = user.id
     redirect to("users/#{user.id}")
@@ -31,8 +31,8 @@ get '/login' do
 end
 
 post '/login' do
-  user = params[:user]
-  user = User.authenticate(user["email"], user["password"])
+  # user = params[:user]
+  user = User.authenticate(params[:email], params[:pass])
 
   if user != nil
     session[:user_id] = user.id
