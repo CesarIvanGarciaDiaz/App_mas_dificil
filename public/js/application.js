@@ -4,7 +4,8 @@ $(document).ready(function() {
   	var emailreg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
   	var passreg= /(?=.{8,})(?=.*[A-Z])(?=.*[0-9])(?![.\n])((?=.*\d)|(?=.*\W+))(?=.*[a-z]).*/
       var modal_login = document.getElementById('id01');
-    var modal = document.getElementById('id02');
+    var modal_sign = document.getElementById('id02');
+
   	$(".boton").click(function(c){
       c.preventDefault();
       var nombre= $("#id02").find(".nombre").val();
@@ -20,13 +21,14 @@ $(document).ready(function() {
           }, function(data) {
             $(".carrousel").remove();
             $(".perro").remove();
+              $(".contenido").empty();
               // $(".contenidotweet").empty();
               $(".contenido").prepend(data);
               //  console.log(data);
 
           });
 
-          modal.style.display = "none";
+          modal_sign.style.display = "none";
       }
 
   		$(".error").fadeOut().remove();
@@ -36,11 +38,11 @@ $(document).ready(function() {
 
 // login
 
-$(".boton_login").click(function(c){
-  c.preventDefault();
+$(".boton_login").click(function(d){
+  d.preventDefault();
     var email= $("#id01").find(".email_login").val();
       var pass= $("#id01").find(".pass_login").val();
-  if (email == ''||pass == '') {
+  if (email == ''|| pass == '') {
       alert("No puedes dejar campos vacios");
   } else {
       $.post('/login', {
@@ -57,13 +59,11 @@ $(".boton_login").click(function(c){
       modal_login.style.display = "none";
   }
 
-  $(".error").fadeOut().remove();
-
 });
 
 
-  $(".adoptar").click(function(c){
-  c.preventDefault();
+  $(".adoptar").click(function(a){
+  a.preventDefault();
         $.get('/adoptar', {
         }, function(data) {
           $(".contenido").empty();
