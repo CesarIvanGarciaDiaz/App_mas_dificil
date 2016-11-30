@@ -1,0 +1,84 @@
+<style media="screen">
+html{
+  background-image: url("/fondo3.jpg");
+  background-size: cover;
+}
+</style>
+
+<div class="uk-container uk-container-center uk-margin-top" id="wall">
+    <nav class="uk-navbar">
+        <a id="Bienvenido" href="#" class="uk-navbar-toggle uk-icon-home uk-form-row"></a>
+        <ul class="uk-navbar-nav uk-navbar-flip" id="ul_nav">
+            <li>
+              <a onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+            </li>
+            <li>
+              <a onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Signup</a>
+            </li>
+            </li>
+            <li>
+                <a href="#">Acerca de Nosotros</a>
+            </li>
+            <li>
+                <a href="#">Salir</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<div id="id01" class="modal">
+
+    <form class="modal-content animate uk-panel uk-panel-box uk-form" action="/login" method="POST">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/ce54bf11889067.562541ef7cde4.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container_form">
+            <div class="uk-form-row uk-form-icon user_form" >
+                <i class="uk-icon-envelope"></i>
+                <input placeholder="Email" type='text' name="user[email]" value=''></input>
+            </div>
+
+            <div class="uk-form-row uk-form-icon user_form" >
+                <i class="uk-icon-lock"></i>
+                <input  placeholder="Contraseña" type='password' name="user[password]" value=''></input>
+            </div>
+            <div class="uk-form-row user_form_enviar">
+                <a class="uk-form-row uk-button uk-button-primary uk-animation-scale-up " id="button" href="">Enviar</a>
+            </div>
+            </div>
+        </form>
+  </div>
+
+
+
+  <div id="id02" class="modal">
+
+      <form class="modal-content animate uk-panel uk-panel-box uk-form" action="/signup" method="POST">
+          <div class="imgcontainer">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/ce54bf11889067.562541ef7cde4.png" alt="Avatar" class="avatar">
+          </div>
+
+          <div class="container_form">
+              <div class="uk-form-row uk-form-icon user_form" >
+                  <i class="uk-icon-user"></i>
+                  <input class="nombre" placeholder="Nombre" type='text' name="user[name]" value=''></input>
+              </div>
+
+              <div class="uk-form-row uk-form-icon user_form" >
+                  <i class="uk-icon-envelope"></i>
+                  <input class="email" placeholder="Email" type='text' name="user[email]" value=''></input>
+              </div>
+
+              <div class="uk-form-row uk-form-icon user_form" >
+                  <i class="uk-icon-lock"></i>
+                  <input class="pass" placeholder="Contraseña" type='password' name="user[password]" value=''></input>
+              </div>
+              <div class="uk-form-row user_form_enviar">
+              <input type='submit' class="uk-form-row uk-button uk-button-primary uk-animation-scale-up boton" value='Enviar'></input>
+              </div>
+              </div>
+          </form>
+    </div>
