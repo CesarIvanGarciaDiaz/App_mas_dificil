@@ -16,3 +16,10 @@ end
 post '/conocenos' do
   erb :conocenos
 end
+
+get '/necesidades'do
+  erb :necesidades
+end
+post '/necesidades' do
+  erb :necesidades
+end
