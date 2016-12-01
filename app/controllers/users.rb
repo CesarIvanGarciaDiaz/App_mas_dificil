@@ -6,6 +6,7 @@ before '/users/:id' do
 end
 
 get '/' do
+
   if params[:error]=='true'
     @error="No puedes acceder a esta session"
   end

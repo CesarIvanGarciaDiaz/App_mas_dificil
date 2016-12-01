@@ -1,4 +1,5 @@
 get '/' do
+    @search = CLIENT.search("#adopcion -rt").take(3)
   erb :index
 end
 

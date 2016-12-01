@@ -20,6 +20,8 @@ require "sinatra/reloader" if development?
 
 require 'erb'
 require 'bcrypt'
+require 'twitter'
+require 'yaml'
 
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
@@ -34,3 +36,12 @@ Dir[APP_ROOT.join('app', 'uploaders', '*.rb')].each { |file| require file }
 
 # Configura la base de datos y modelos
 require APP_ROOT.join('config', 'database')
+
+
+yaml = YAML.load(File.open("config/twitter_public.yml"))
+CLIENT = Twitter::REST::Client.new do |config|
+   config.consumer_key        = yaml["consumer_key"]
+   config.consumer_secret     = yaml["consumer_secret"]
+   config.access_token        = yaml["access_token"]
+   config.access_token_secret = yaml["access_token_secret"]
+end

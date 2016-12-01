@@ -15,6 +15,13 @@ color: red;
 padding: 25px 20px;
 }
 
+.logo_usuario{
+  /*padding-top: 10px;
+font-size: 70px;*/
+
+  /*position: absolute;*/
+}
+
 .perro{
   top: 7%;
 left: 40%;
